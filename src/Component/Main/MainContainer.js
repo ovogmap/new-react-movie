@@ -4,9 +4,6 @@ import Header from "../Header/Header";
 import api from "../../Api";
 import axios from "axios";
 import styled from "styled-components";
-const MainBox = styled.div`
-  position: relative;
-`;
 
 export default () => {
   const [movie, setMovie] = useState(null);
