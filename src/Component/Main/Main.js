@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MainBox, MainInner, MainTitle, Btn } from "./MainStyle";
 import { Link } from "react-router-dom";
 
-//image.tmdb.org/t/p/w220_and_h330_face/ -> 작은사진
+//http://image.tmdb.org/t/p/w220_and_h330_face/ -> 작은사진
 //http://image.tmdb.org/t/p/w1920_and_h800_multi_faces/ -> 큰사진
 export default ({ movieData }) => {
   const [imgUrl, setImgUrl] = useState("");

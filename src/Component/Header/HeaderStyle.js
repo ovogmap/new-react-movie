@@ -9,8 +9,9 @@ export const HeaderBox = styled.div`
   align-items: center;
   justify-content: center;
   color: #fff;
+  z-index: 100;
   h1 {
-      color: #fff;
+    color: #fff;
   }
   .inner {
     width: 1200px;

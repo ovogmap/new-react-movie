@@ -1,6 +1,6 @@
 import React from "react";
 import { HeaderBox } from "./HeaderStyle";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -16,7 +16,7 @@ function Header() {
             <a href="#">검색</a>
           </li>
           <li>
-            <a href="#">둘러보기</a>
+            <Link to="/list">둘러보기</Link>
           </li>
           <li>
             <a href="#">소개</a>
