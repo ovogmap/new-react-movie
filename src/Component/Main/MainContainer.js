@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Main from "./Main";
-import Header from "../Header/Header";
+import Header from "../Header/index";
 import api from "../../Api";
-import axios from "axios";
-import styled from "styled-components";
 
 export default () => {
   const [movie, setMovie] = useState(null);
   const [movieData, setMovieData] = useState(null);
+
   const fetchMovie = async () => {
     const newMovie = await api.now_playing();
     const index = Math.floor(Math.random() * newMovie.data.results.length);
@@ -17,17 +16,16 @@ export default () => {
     fetchMovie();
   }, []);
 
+  const detailMovie = async () => {
+    const result = await api.getDetail(movie.id).then((response) => {
+        return response.data;
+      });
+    setMovieData(result);
+  };
   useEffect(() => {
     if (movie) {
       console.log(movie.id);
-      axios
-        .get(
-          `https://api.themoviedb.org/3/movie/${movie.id}?api_key=1d3ad3a1e497c9afbe443d1443905c3f&language=ko-KR`
-        )
-        .then((response) => {
-          const result = response.data;
-          setMovieData(result);
-        });
+      detailMovie();
     }
   }, [movie]);
   // useEffect(() => {
