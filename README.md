@@ -79,6 +79,6 @@ fetchMovie();
   setLike(newLike); 위 if문을 다 끝마치고 fals,true를 반환해 준다. 반환된 값에 의해 좋아요 버튼의 UI가 변경되게 된다.
   };
 
-  <LikeBtn onClick={() => {lickClick()}}>
-  {like ? <span>좋아요 취소 ❤</span> : <span>좋아요 ♡</span>}
-  </LikeBtn>
+  //<LikeBtn onClick={() => {lickClick()}}>
+  //{like ? <span>좋아요 취소 ❤</span> : <span>좋아요 ♡</span>}
+  //</LikeBtn>
