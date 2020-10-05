@@ -13,13 +13,13 @@ function Header() {
         </div>
         <ul>
           <li>
-            <a href="#">검색</a>
+            <Link>검색</Link>
           </li>
           <li>
             <Link to="/list">둘러보기</Link>
           </li>
           <li>
-            <a href="#">소개</a>
+            <Link>소개</Link>
           </li>
         </ul>
       </div>

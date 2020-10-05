@@ -15,12 +15,9 @@ import {
 // 340102;
 // ${movieData.backdrop_path}
 export default ({ getMovieData, id }) => {
-  const [like, setLike] = useState(false);
-  const [local, setLocal] = useState({
-    id: "",
-    title: "",
-    url: "",
-  });
+  const [like, setLike] = useState(
+    localStorage.getItem(getMovieData.data.id) !== null
+  );
   const {
     backdrop_path,
     poster_path,
@@ -35,10 +32,20 @@ export default ({ getMovieData, id }) => {
   const post = `url(http://image.tmdb.org/t/p/w220_and_h330_face/${poster_path}) center / cover no-repeat`;
 
   const lickClick = () => {
-    const loc = window.localStorage;
-    loc.setItem(getMovieData.data.id, "1");
-    console.log(local.id);
-    setLike(!like);
+    const newLike = localStorage.getItem(getMovieData.data.id) === null;
+    if (newLike) {
+      localStorage.setItem(
+        getMovieData.data.id,
+        JSON.stringify({
+          id: getMovieData.data.id,
+          title: getMovieData.data.title,
+          posterPath: getMovieData.data.posterPath,
+        })
+      );
+    } else {
+      localStorage.removeItem(getMovieData.data.id);
+    }
+    setLike(newLike);
   };
   return (
     <DetailBox>
@@ -57,7 +64,7 @@ export default ({ getMovieData, id }) => {
                 lickClick();
               }}
             >
-              {!like ? <span>좋아요 ♡</span> : <span>좋아요 취소 ❤</span>}
+              {like ? <span>좋아요 취소 ❤</span> : <span>좋아요 ♡</span>}
             </LikeBtn>
           </TitleBox>
           <IntMovie>

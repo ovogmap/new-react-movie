@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MainBox = styled.div`
+const MainBox = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -21,26 +21,26 @@ export const MainBox = styled.div`
     font-weight: 700;
   }
 `;
-export const MainInner = styled.div`
+const MainInner = styled.div`
   // background: rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 100px;
   border-radius: 20px;
 `;
 
-export const MainTitle = styled.h3`
+const MainTitle = styled.h3`
   color: #fff;
   font-size: 30px;
   font-weight: 900;
 `;
 
-export const Btn = styled.button`
+const Btn = styled.button`
   color: #fff;
   font-weight: 700;
   font-size: 40px;
   font-weight: 500;
   margin-top: 60px;
-//   border-radius: 5px;
+  //   border-radius: 5px;
   padding: 10px 30px;
   background: rgba(0, 0, 0, 0.5);
   border: 5px solid #fff;
@@ -49,3 +49,4 @@ export const Btn = styled.button`
     background: rgba(0, 0, 0, 0.8);
   }
 `;
+export { MainBox, MainInner, MainTitle, Btn };

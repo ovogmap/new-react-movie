@@ -39,7 +39,8 @@ const Listbox = styled.div`
       color: #fff;
       font-size: 26px;
       font-weight: 600;
-      filter: grayscale(60%);
+      filter: grayscale(30%);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 3px 0px;
       div {
         color: #fff;
         display: block;
@@ -70,7 +71,7 @@ export default ({ movie }) => {
                 className="listItems"
                 onClick={() => {}}
                 style={{
-                  background: `url(http://image.tmdb.org/t/p/w220_and_h330_face/${poster_path}) center / cover no-repeat`,
+                  background: `url(https://image.tmdb.org/t/p/original/${poster_path}) center / cover no-repeat`,
                 }}
               >
                 <Link to={`/detail/${id}`}>
